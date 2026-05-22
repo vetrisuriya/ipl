@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPL Teams Schedule Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>IPL Teams Schedule Generator</h1>
+      <p>Build a league match schedule from team names. Optionally choose total league matches or matches per team.</p>
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="teams.html" class="active">Teams</a>
+        <a href="nrr.html">NRR</a>
+        <a href="strike.html">Strike Rate</a>
+        <a href="economy.html">Economy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <form id="teamsForm" class="tool-form">
+        <label>
+          Team names (one per line):
+          <textarea id="teamNames" rows="8" placeholder="Mumbai Indians\nChennai Super Kings\nRoyal Challengers Bangalore"></textarea>
+        </label>
+        <div class="row">
+          <label>
+            Total league matches (optional):
+            <input type="number" id="leagueMatches" min="1" placeholder="Leave blank for full round robin" />
+          </label>
+          <label>
+            Matches per team (optional):
+            <input type="number" id="matchesPerTeam" min="1" placeholder="Use only if total league matches is blank" />
+          </label>
+        </div>
+        <button type="submit" class="btn">Generate Schedule</button>
+      </form>
+      <div id="teamsResult" class="result-box"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>IPL Teams Schedule Generator page.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPL Strike Rate Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Strike Rate Calculator</h1>
+      <p>Calculate batting strike rate from runs and balls faced.</p>
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="nrr.html">NRR</a>
+        <a href="strike.html" class="active">Strike Rate</a>
+        <a href="economy.html">Economy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <form id="strikeForm" class="tool-form">
+        <label>Runs scored:<input type="number" id="strikeRuns" min="0" value="0" /></label>
+        <label>Balls faced:<input type="number" id="strikeBalls" min="0" value="0" /></label>
+        <button type="submit" class="btn">Calculate Strike Rate</button>
+      </form>
+      <div id="strikeResult" class="result-box"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Strike Rate calculator page.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

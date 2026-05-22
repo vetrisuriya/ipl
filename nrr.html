@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPL Net Run Rate Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Net Run Rate Calculator</h1>
+      <p>Calculate current and projected NRR for two teams.</p>
+      <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="nrr.html" class="active">NRR</a>
+        <a href="strike.html">Strike Rate</a>
+        <a href="economy.html">Economy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Net Run Rate Target Calculator</h2>
+      <p>Example: if RCB has NRR +1.605 and GT's current NRR is +0.350, enter GT's current totals and match details to see what GT must defend to catch or equal that NRR.</p>
+      <div class="grid-2">
+        <fieldset>
+          <legend>GT current totals</legend>
+          <label>Runs scored:<input type="number" id="teamA_runsScored" min="0" value="0" /></label>
+          <label>Overs faced:<input type="number" id="teamA_oversFaced" min="0" step="0.1" value="0" /></label>
+          <label>Runs conceded:<input type="number" id="teamA_runsConceded" min="0" value="0" /></label>
+          <label>Overs bowled:<input type="number" id="teamA_oversBowled" min="0" step="0.1" value="0" /></label>
+        </fieldset>
+        <fieldset>
+          <legend>Target NRR</legend>
+          <label>Target NRR:<input type="number" id="target_nrr" step="0.001" value="1.605" /></label>
+          <p>Use the RCB NRR value as a target and GT current totals as the starting point.</p>
+        </fieldset>
+      </div>
+
+      <div class="nrr-scenario panel">
+        <h3>Batting first</h3>
+        <form id="nrrTargetBattingForm" class="tool-form">
+          <label>GT match runs scored:<input type="number" id="batting_matchRuns" min="0" value="0" /></label>
+          <label>GT overs batted:<input type="number" id="batting_matchOvers" min="0" step="0.1" value="0" /></label>
+          <label>Opponent overs faced:<input type="number" id="batting_oppOvers" min="0" step="0.1" value="0" /></label>
+          <button type="submit" class="btn">Calculate batting-first requirement</button>
+        </form>
+        <div id="battingTargetResult" class="result-box"></div>
+      </div>
+
+      <div class="nrr-scenario panel">
+        <h3>Bowling first</h3>
+        <form id="nrrTargetBowlingForm" class="tool-form">
+          <label>Opponent runs conceded:<input type="number" id="bowling_oppRuns" min="0" value="0" /></label>
+          <label>Opponent overs faced:<input type="number" id="bowling_oppOvers" min="0" step="0.1" value="0" /></label>
+          <label>GT chase overs:<input type="number" id="bowling_chaseOvers" min="0" step="0.1" value="0" /></label>
+          <button type="submit" class="btn">Calculate bowling-first requirement</button>
+        </form>
+        <div id="bowlingTargetResult" class="result-box"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>NRR calculator page.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
